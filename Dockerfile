@@ -13,16 +13,20 @@ WORKDIR /var/www/html
 
 COPY composer.json composer.lock ./
 
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN composer install \
+    --no-interaction \
+    --prefer-dist \
+    --optimize-autoloader \
+    --no-dev \
+    --no-scripts
 
 COPY . .
 
 RUN npm install && npm run build
 
-RUN chmod -R 775 storage bootstrap/cache
+RUN php artisan package:discover || true
 
-# 🔥 ВАЖНО: миграции НЕ тут (на Render это плохая практика)
-# лучше запускать отдельно при деплое
+RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 10000
 
