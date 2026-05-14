@@ -1,0 +1,17 @@
+User-agent: *
+
+Disallow: /login
+Disallow: /register
+Disallow: /feedback
+Disallow: /admin
+Disallow: /order
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /verify-email
+Disallow: /confirm-password
+
+Host: https://ti-weld.ru
+
+Sitemap: https://ti-weld.ru/sitemap.xml

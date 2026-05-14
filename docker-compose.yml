@@ -1,0 +1,58 @@
+version: '3.8'
+
+networks:
+  laravel:
+    driver: bridge
+
+services:
+  # Сервер Nginx — отвечает за обработку HTTP-запросов и раздачу статики
+  webserver:
+    image: nginx:alpine
+    container_name: laravel_webserver
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html                         # Монтируем код приложения
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf # Монтируем конфиг
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - laravel
+
+  # Основное приложение PHP-FPM — исполняет PHP-скрипты
+  app:
+    build:
+      context: .                                # Строим из Dockerfile в корне
+      dockerfile: Dockerfile                    # Отдельный Dockerfile для бэкенда
+    container_name: laravel_app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html                         # Монтируем код приложения для разработки
+    networks:
+      - laravel
+    depends_on:
+      - mysql
+    environment:
+      - "DB_HOST=mysql"                         # Этот хост будет доступен внутри сети Docker
+      - "REDIS_HOST=redis"
+
+  # База данных MySQL — хранит данные
+  mysql:
+    image: mysql:8.0
+    container_name: laravel_mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: diplom                   # Имя базы при создании
+      MYSQL_ROOT_PASSWORD: root                 # Пароль для root
+    networks:
+      - laravel
+    volumes:
+      - mysql_data:/var/lib/mysql               # Сохраняем данные базы, даже если контейнер пересоздадут
+
+# Тома для постоянного хранения данных
+volumes:
+  mysql_data:
