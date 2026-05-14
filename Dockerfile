@@ -4,8 +4,7 @@ RUN apt-get update && apt-get install -y \
     git curl zip unzip \
     libpng-dev libonig-dev libxml2-dev libzip-dev libpq-dev \
     nodejs npm \
-    && docker-php-ext-install \
-        pdo_pgsql mbstring exif pcntl bcmath gd zip \
+    && docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -14,18 +13,16 @@ WORKDIR /var/www/html
 
 COPY composer.json composer.lock ./
 
-RUN composer install \
-    --no-interaction \
-    --prefer-dist \
-    --no-dev \
-    --optimize-autoloader \
-    --no-scripts
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 COPY . .
 
 RUN npm install && npm run build
 
 RUN chmod -R 775 storage bootstrap/cache
+
+# 🔥 ВАЖНО: миграции НЕ тут (на Render это плохая практика)
+# лучше запускать отдельно при деплое
 
 EXPOSE 10000
 
