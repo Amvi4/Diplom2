@@ -25,6 +25,7 @@ COPY . .
 RUN npm install && npm run build
 
 RUN chmod -R 775 storage bootstrap/cache
+RUN composer install --no-scripts
 
 EXPOSE 10000
 
