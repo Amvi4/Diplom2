@@ -27,6 +27,8 @@ RUN npm install && npm run build
 RUN php artisan package:discover || true
 
 RUN chmod -R 775 storage bootstrap/cache
+RUN psql --version || true
+RUN php -i | grep -i "PostgreSQL" || true
 
 EXPOSE 10000
 
