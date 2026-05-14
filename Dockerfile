@@ -75,4 +75,8 @@ EXPOSE 10000
 # -----------------------------
 # Start Laravel
 # -----------------------------
+    RUN php artisan config:clear
+RUN php artisan cache:clear
+RUN npm install && npm run build
+
 CMD php artisan serve --host=0.0.0.0 --port=10000
