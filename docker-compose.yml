@@ -46,7 +46,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: diplom                   # Имя базы при создании
+      MYSQL_DATABASE: neondb                   # Имя базы при создании
       MYSQL_ROOT_PASSWORD: root                 # Пароль для root
     networks:
       - laravel
