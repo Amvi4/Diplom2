@@ -73,6 +73,9 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'require',
+            'options' => [
+                'options' => env('DB_OPTIONS'),
+            ],
         ],
 
         'sqlsrv' => [
