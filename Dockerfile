@@ -49,7 +49,8 @@ RUN composer install \
     --prefer-dist \
     --no-dev \
     --optimize-autoloader \
-    --no-progress
+    --no-progress \
+    --no-scripts
 
 # -----------------------------
 # Copy project files
