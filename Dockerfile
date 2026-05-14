@@ -28,11 +28,14 @@ RUN apt-get update && apt-get install -y \
 # -----------------------------
 # Composer
 # -----------------------------
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 
 # Fix Composer env
 ENV COMPOSER_HOME=/tmp
 ENV COMPOSER_MEMORY_LIMIT=-1
+
+ENV PATH="/usr/bin:${PATH}"
 
 WORKDIR /var/www/html
 
