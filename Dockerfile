@@ -4,6 +4,10 @@ ENV COMPOSER_HOME=/tmp
 
 ENV COMPOSER_MEMORY_LIMIT=-1
 
+RUN ls -la
+RUN php -v
+RUN composer -V
+
 RUN apt-get update && apt-get install -y \
     curl \
     zip \
