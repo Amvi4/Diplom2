@@ -1,5 +1,9 @@
 FROM php:8.2-fpm
 
+ENV COMPOSER_HOME=/tmp
+
+ENV COMPOSER_MEMORY_LIMIT=-1
+
 RUN apt-get update && apt-get install -y \
     curl \
     zip \
@@ -20,7 +24,12 @@ WORKDIR /var/www/html
 
 COPY composer.json composer.lock ./
 
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-scripts
+RUN composer install \
+    --no-interaction \
+    --prefer-dist \
+    --no-dev \
+    --optimize-autoloader \
+    --no-progress
 
 COPY . .
 
