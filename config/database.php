@@ -73,7 +73,6 @@ return [
             'search_path' => 'public',
             'sslmode' => 'require',
         ],
-        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
