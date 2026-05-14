@@ -40,3 +40,5 @@ RUN npm install && npm run build
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache
+
+    CMD php artisan serve --host=0.0.0.0 --port=$PORT
