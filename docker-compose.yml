@@ -3,7 +3,6 @@ networks:
     driver: bridge
 
 services:
-  # Веб-сервер Nginx
   webserver:
     image: nginx:alpine
     container_name: laravel_webserver
@@ -18,19 +17,22 @@ services:
     networks:
       - laravel
 
-  # PHP-FPM приложение
   app:
     build:
       context: .
       dockerfile: Dockerfile
+
     container_name: laravel_app
+
     working_dir: /var/www/html
+
     volumes:
       - .:/var/www/html
+
     networks:
       - laravel
+
     environment:
-      # Подключение к внешней Neon БД (не внутри Docker)
       DB_CONNECTION: pgsql
       DB_HOST: ep-young-salad-ape85qdu-pooler.c-7.us-east-1.aws.neon.tech
       DB_PORT: 5432
@@ -38,9 +40,9 @@ services:
       DB_USERNAME: neondb_owner
       DB_PASSWORD: npg_yo8upLrFM9Xa
       DB_SSLMODE: require
-      # Другие переменные Laravel
+
       APP_ENV: local
       APP_DEBUG: "true"
       APP_URL: http://localhost
+
       LOG_CHANNEL: stack
-      # ... остальные по необходимости
