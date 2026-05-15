@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta name="description" content="TI-Weld — профессиональные сварочные услуги">
+        <meta name="google-site-verification" content="mF-E7mAEj0aGRbC5-Zuc5nCi_4SUvxIy_Ksgkmky3QE" />
 
         <title inertia>TI-Weld | Сварка в городе Артём</title>
 
