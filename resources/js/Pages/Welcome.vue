@@ -56,6 +56,7 @@ function submit() {
 <template>
     <Head>
         <title>TI-Weld — Сварочные услуги</title>
+        <meta name="google-site-verification" content="mF-E7mAEj0aGRbC5-Zuc5nCi_4SUvxIy_Ksgkmky3QE" />
 
         <meta
             name="description"
