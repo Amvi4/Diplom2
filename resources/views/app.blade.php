@@ -6,6 +6,7 @@
 
         <meta name="description" content="TI-Weld — профессиональные сварочные услуги">
         <meta name="google-site-verification" content="mF-E7mAEj0aGRbC5-Zuc5nCi_4SUvxIy_Ksgkmky3QE" />
+        <meta name="yandex-verification" content="3bc432d29d022cc7" />
 
         <title inertia>TI-Weld | Сварка в городе Артём</title>
 
