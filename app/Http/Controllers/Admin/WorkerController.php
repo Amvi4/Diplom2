@@ -46,8 +46,6 @@ class WorkerController extends Controller
             'experience' => $request->experience,
             'description' => $request->description,
             'photo' => $photoPath
-                ? '/storage/' . $photoPath
-                : null
         ]);
 
         return redirect('/admin/workers');
@@ -83,12 +81,12 @@ class WorkerController extends Controller
 
     $image = null;
 
-    if ($request->hasFile('image')) {
+    if ($request->hasFile('work_image')) {
 
-        $path = $request->file('image')
+        $path = $request->file('work_image')
             ->store('works', 'public');
 
-        $image = '/storage/' . $path;
+        $image = $path;
     }
 
     $worker->works()->create([

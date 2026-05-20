@@ -17,7 +17,7 @@
     <div class="grid">
 
       <div v-for="worker in workers" :key="worker.id" class="card" @click="go(worker.id)">
-        <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy">
+        <img :src="worker.photo ? `/storage/${worker.photo}` : '/images/default-worker.jpg'" alt="сотрудник" loading="lazy"/>
 
         <h2>{{ worker.name }}</h2>
 
