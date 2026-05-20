@@ -234,6 +234,7 @@ section a:hover {
   .service {
     width: 100%;
     max-width: 400px;
+    gap: 25px;
   }
 
   .service h3 {
@@ -242,6 +243,8 @@ section a:hover {
 
   .service p {
     font-size: 14px;
+    position:static;
+    width: 100%;
   }
 
   .service img {
