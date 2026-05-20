@@ -31,7 +31,7 @@
 
         <div class="works">
             <div v-for="work in worker.works" :key="work.id" class="work" >
-                <img v-if="work.work_image" :src="work.work_image" class="work-image" alt="работа специалиста" loading="lazy">
+                <img v-if="work.work_image" :src="`/storage/${work.work_image}`" class="work-image" alt="работа специалиста" loading="lazy">
                 <h3>{{ work.title }}</h3>
                 <p>{{ work.description }}</p>
                 <button @click="remove(work.id)">Удалить</button>
@@ -69,12 +69,12 @@ const form = useForm({
 
     title: '',
     description: '',
-    image: null
+    work_image: null
 })
 
 function handleImage(e) {
 
-    form.image = e.target.files[0]
+    form.work_image = e.target.files[0]
 }
 
 function submit() {
