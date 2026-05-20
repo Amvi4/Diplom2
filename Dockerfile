@@ -25,6 +25,7 @@ COPY . .
 RUN npm install && npm run build
 
 RUN php artisan package:discover || true
+RUN php artisan storage:link || true
 
 RUN chmod -R 775 storage bootstrap/cache
 RUN psql --version || true
