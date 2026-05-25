@@ -77,6 +77,7 @@ function remove(id) {
 }
 
 .review button:hover {
+  padding: 20px;
   background-color: #1E1E5A;
   color: #D1D1E2;
 }
