@@ -109,8 +109,6 @@ class WorkerController extends Controller
     $image = $upload['secure_url'];
     }
 
-    $image = $uploadedFile->getSecurePath();
-}
 
     $worker->works()->create([
         'title' => $request->title,
