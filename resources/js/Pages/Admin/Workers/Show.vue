@@ -16,7 +16,7 @@
     <section class="page">
 
         <div class="top">
-            <img :src="worker.photo ? `/storage/${worker.photo}` : '/images/default-worker.jpg'" alt="сотрудник" loading="lazy"/>
+            <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
     <!-- РАБОТЫ СОТРУДНИКА -->
@@ -31,7 +31,7 @@
 
         <div class="works">
             <div v-for="work in worker.works" :key="work.id" class="work" >
-                <img v-if="work.work_image" :src="`/storage/${work.work_image}`" class="work-image" alt="работа специалиста" loading="lazy">
+                <img v-if="work.work_image" :src="work.work_image" class="work-image" alt="работа специалиста" loading="lazy">
                 <h3>{{ work.title }}</h3>
                 <p>{{ work.description }}</p>
                 <button @click="remove(work.id)">Удалить</button>

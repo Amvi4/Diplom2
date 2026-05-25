@@ -37,7 +37,6 @@ const form = useForm({
   name: '',
   position: '',
   experience: '',
-  description: '',
   photo: null
 })
 
@@ -46,7 +45,9 @@ function handleFile(e) {
 }
 
 function submit() {
-  form.post('/admin/workers')
+  form.post('/admin/workers', {
+    forceFormData: true
+  })
 }
 </script>
 

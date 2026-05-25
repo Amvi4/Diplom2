@@ -29,7 +29,7 @@
                 коррозии в местах соединений и увеличивает срок службы изделия, что делает работу не только 
                 качественной, но и экономически выгодной в долгосрочной перспективе.
             </p>
-            <img :src="worker.photo ? `/storage/${worker.photo}`: '/images/default-worker.jpg'" alt="сотрудник"/>
+            <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
     <!-- РАБОТЫ СОТРУДНИКА -->

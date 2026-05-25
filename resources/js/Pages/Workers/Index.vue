@@ -90,7 +90,7 @@ function openWorker(id) {
       <div class="slider" :style="{transform: `translateX(-${currentIndex * 463}px)`}">
         <div v-for="worker in workers" :key="worker.id" class="card" @click="openWorker(worker.id)">
 
-          <img :src="worker.photo ? `/storage/${worker.photo}` : '/images/default-worker.jpg'" alt="сотрудник" loading="lazy"/>
+          <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
 
           <div class="info">
 
