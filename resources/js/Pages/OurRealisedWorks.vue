@@ -182,6 +182,9 @@ section a:hover {
 }
 
 .project button {
+  text-align: center;
+  margin: 0;
+  padding: 0;
     min-width: 100%;
   background-color: transparent;
   border-radius: 50px;
@@ -192,8 +195,9 @@ section a:hover {
 }
 
 .project button:hover {
-  color: #1e1e5a36;
+  color: white;
   border: 1px solid #1e1e5a36;
+  background-color: #1E1E5A;
 }
 
 .text-info {

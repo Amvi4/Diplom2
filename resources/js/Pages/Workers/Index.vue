@@ -208,7 +208,11 @@ section a:hover {
   overflow: hidden;
   cursor: pointer;
   flex-shrink: 0;
+  transition: 0.2s;
 }
+.card:hover{
+        background: #1d1d75c7;
+    }
 
 .info {
   display: flex;

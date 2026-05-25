@@ -120,7 +120,12 @@ function logout() {
   border-bottom: 1px solid #1E1E5A;
   width: 263px;
 }
+.section-header a:hover{
+  text-decoration: underline;
+  color: #1e1e5ac2;
+}
 .section-header1{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +137,10 @@ function logout() {
 
 .section-header1 a{
   font-size: 24px;
+  transition: 0.2s;
+}
+.section-header1 a:hover{
+  font-size: 25px;
 }
 
 .logo {

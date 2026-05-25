@@ -143,7 +143,7 @@ section a:hover {
   margin: 100px 0;
   padding: 50px;
   display: flex;
-  gap: 16px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -157,8 +157,11 @@ section a:hover {
   padding: 20px;
   gap: 173px;
   width: 412px;
+  transition: 0.2s;
 }
-
+.service:hover{
+  background-color: #1c1c80c9;
+}
 .service h3, .service p, .service a {
   color: #D1D1E2;
 }

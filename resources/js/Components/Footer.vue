@@ -56,9 +56,11 @@ footer{
 /* настройка шрифта */
 .section-footer1 a, .section-footer a, .contacts span{
     color: #D1D1E2;
+
 }
 .section-footer a:hover{
-    color: #d1d1e279;
+    color: #d1d1e2b6;
+    text-decoration: underline solid ;
 }
 
 .section-footer1 a{

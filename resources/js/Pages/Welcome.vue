@@ -367,8 +367,9 @@ function submit() {
         color: #1E1E5A;
     }
     .project button:hover{
-        color: #1e1e5a36;
+        color: white;
         border: 1px solid #1e1e5a36;
+        background-color: #1E1E5A;
     }
     /* подход к работе */
     #text-work h2{
@@ -402,61 +403,65 @@ function submit() {
     }
    .workers {
 
-  transition: 0.3s;
-}
+    transition: 0.3s;
+    }
 
-.slider-wrapper {
-  overflow: hidden;
-  width: 1832px;
-  margin: 0 auto;
-}
+    .slider-wrapper {
+    overflow: hidden;
+    width: 1832px;
+    margin: 0 auto;
+    }
 
-.slider {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
-}
-
-.card {
-  max-width: 443px;
-  background: #1E1E6D;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-
-.info {
+    .slider {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-  padding: 25px;
-  color: white;
-}
+    gap: 20px;
+    transition: transform 0.5s ease;
+    }
 
-.info h3 {
-  color: #D1D1E2;
-  font-family: 'light';
-}
+    .card {
+    max-width: 443px;
+    background: #1E1E6D;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.2s;
+    }
+    .card:hover{
+        background: #1d1d75c7;
+    }
 
-.info p {
-  color: #D1D1E2;
-}
-.buttons{
-    position: absolute;
-    top: 20px;
-    right: 60px;
-}
-.nav{
-    background-color: transparent;
-    color: #1E1E5A;
-    font-size: 24px;
-}
-.nav:hover{
-    background-color: transparent;
-    color: #1e1e5a9a;
-}
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    padding: 25px;
+    color: white;
+    }
+
+    .info h3 {
+    color: #D1D1E2;
+    font-family: 'light';
+    }
+
+    .info p {
+    color: #D1D1E2;
+    }
+    .buttons{
+        position: absolute;
+        top: 20px;
+        right: 60px;
+    }
+    .nav{
+        background-color: transparent;
+        color: #1E1E5A;
+        font-size: 24px;
+    }
+    .nav:hover{
+        background-color: transparent;
+        color: #1e1e5a9a;
+    }
 
 /* адаптив */
 
