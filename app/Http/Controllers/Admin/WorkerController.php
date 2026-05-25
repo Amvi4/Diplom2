@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\WorkerWork;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+// use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Cloudinary\Cloudinary;
 
 class WorkerController extends Controller
 {
@@ -33,19 +34,26 @@ class WorkerController extends Controller
             'description' => 'nullable',
             'photo' => 'nullable|image|max:2048'
         ]);
+        $cloudinary = new Cloudinary([
+    'cloud' => [
+        'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
+        'api_key' => env('CLOUDINARY_API_KEY'),
+        'api_secret' => env('CLOUDINARY_API_SECRET'),
+        ],
+    ]);
 
         $photoPath = null;
 
         if ($request->hasFile('photo')) {
 
-    $uploadedFile = Cloudinary::upload(
+    $upload = $cloudinary->uploadApi()->upload(
         $request->file('photo')->getRealPath(),
         [
             'folder' => 'workers'
         ]
     );
 
-    $photoPath = $uploadedFile->getSecurePath();
+    $photoPath = $upload['secure_url'];
 }
 
         Worker::create([
@@ -91,12 +99,15 @@ class WorkerController extends Controller
 
     if ($request->hasFile('work_image')) {
 
-    $uploadedFile = Cloudinary::upload(
+    $upload = $cloudinary->uploadApi()->upload(
         $request->file('work_image')->getRealPath(),
         [
             'folder' => 'works'
         ]
     );
+
+    $image = $upload['secure_url'];
+    }
 
     $image = $uploadedFile->getSecurePath();
 }
