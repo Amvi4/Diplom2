@@ -95,20 +95,27 @@ class WorkerController extends Controller
         'work_image' => 'nullable|image'
     ]);
 
+    $cloudinary = new Cloudinary([
+        'cloud' => [
+            'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
+            'api_key' => env('CLOUDINARY_API_KEY'),
+            'api_secret' => env('CLOUDINARY_API_SECRET'),
+        ],
+    ]);
+
     $image = null;
 
     if ($request->hasFile('work_image')) {
 
-    $upload = $cloudinary->uploadApi()->upload(
-        $request->file('work_image')->getRealPath(),
-        [
-            'folder' => 'works'
-        ]
-    );
+        $upload = $cloudinary->uploadApi()->upload(
+            $request->file('work_image')->getRealPath(),
+            [
+                'folder' => 'works'
+            ]
+        );
 
-    $image = $upload['secure_url'];
+        $image = $upload['secure_url'];
     }
-
 
     $worker->works()->create([
         'title' => $request->title,
