@@ -67,6 +67,11 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style scoped>
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 /* секции */
 section {
   display: flex;
@@ -108,7 +113,7 @@ section a:hover {
 }
 
 .section-name span {
-  font-size: 20px;
+  font-size: 14px;
   color: #1e1e5a9a;
 }
 

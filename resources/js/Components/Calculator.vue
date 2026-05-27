@@ -19,7 +19,6 @@ function go(url) {
 
 <style scoped>
 .calc-section{
-  padding: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,11 +27,20 @@ function go(url) {
 .calc{
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 30px;
       width: 1131px;
     }
     .calc button{
       width: 672px;
+      background-color: white;
+      color: #1E1E5A;
+    }
+    .calc button:hover{
+      width: 672px;
+      background-color: #1E1E5A;
+      color: white;
     }
     /* адаптив */
     @media (max-width: 768px) {

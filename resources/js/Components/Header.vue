@@ -61,15 +61,17 @@
         <button @click="logout" class="win-btn-logout">Выйти</button>
       </div>
 
-
+        <hr>
         <button @click="go('/calculator')" class="win-btn">Калькулятор</button>
         <button @click="go('/services')" class="win-btn">Услуги</button>
         <button @click="go('/works')" class="win-btn">Наши работы</button>
         <button @click="go('/reviews')" class="win-btn">Отзывы</button>
-        <button @click="go('/contact-us')" class="win-btn">Связаться с нами</button>
+        <hr>  
         <button @click="go('/ourwork')" class="win-btn">Подход к работе</button>
         <button @click="go('/workers')" class="win-btn">Специалисты</button>
         <button @click="go('/contacts')" class="win-btn">Контакты</button>
+        <hr>
+        <button @click="go('/contact-us')" class="win-btn">Связаться с нами</button>
 
     </div>
 
@@ -119,10 +121,13 @@ function logout() {
   height: 89px;
   border-bottom: 1px solid #1E1E5A;
   width: 263px;
+  transition: 0.2s;
 }
-.section-header a:hover{
-  text-decoration: underline;
-  color: #1e1e5ac2;
+.section-header:hover{
+  background-color: #1E1E5A;
+}
+.section-header:hover a{
+  color: white;
 }
 .section-header1{
   position: relative;
@@ -139,10 +144,13 @@ function logout() {
   font-size: 24px;
   transition: 0.2s;
 }
-.section-header1 a:hover{
-  font-size: 25px;
+.section-header1:hover{
+  background-color: #1E1E5A;
+  transition: 0.2s;
 }
-
+.section-header1:hover a{
+  color: white;
+}
 .logo {
   width: 100px;
   padding: 0;
@@ -173,7 +181,9 @@ a{
   border-left: 1px solid #1E1E5A;
   border-right: 1px solid #1E1E5A;
   border-bottom: 1px solid #1E1E5A;
+  transition: 0.2s;
 }
+
 
 /* DRAWER */
 .drawer {
@@ -187,6 +197,9 @@ a{
   transition: 0.3s;
   padding: 20px;
   z-index: 1000;
+}
+.drawer hr{
+  border: 1px solid #1e1e5aa6;
 }
   
 .drawer.open {
@@ -228,6 +241,10 @@ a{
   background-color: transparent;
   color: #1E1E5A;
   font-size: 20px;
+  text-align: left;
+}
+.win-btn:hover{
+  padding: 10px 0px;
 }
 .win-btn:hover{
   color: #19196875;

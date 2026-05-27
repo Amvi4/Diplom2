@@ -127,7 +127,7 @@ function submit() {
             <h2>Наши проекты, которыми мы гордимся , и готовы сделать такие же и вам</h2>
         </div>
         <div class="projects">
-            <div class="project" id="project1">
+            <div class="project">
                 <img src="../../src/images/project-stairs.png" alt="лестница" loading="lazy">
                 <h3>Металлическая лестница</h3>
                 <p>это опытные специалисты и современное оборудование. Выполняем сварку конструкций, ремонт металлоизделий и индивидуальные проекты с гарантией результата.</p>
@@ -139,7 +139,7 @@ function submit() {
                 <p>Практичное и долговечное решение для благоустройства участка. Конструкция выполнена из прочного металла с аккуратными сварными швами и покрыта защитной краской для устойчивости к погодным условиям.</p>
                 <button @click="go('/works/bench')">подробнее</button>
             </div>
-            <div class="project" id="project1">
+            <div class="project">
                 <img src="../../src/images/project-fence.png" alt="забор" loading="lazy">
                 <h3>Металлический забор</h3>
                 <p>Изготовление и обработка металлических деталей с высокой точностью и вниманием к каждому этапу. Работа выполнена с учетом технических требований и последующей надежной эксплуатацией. Гарантируем качество сварных соединений и аккуратный внешний вид готового изделия.</p>
@@ -237,21 +237,26 @@ function submit() {
         display: flex;
         justify-content: end;
         flex-direction: column;
-        height: 850px;
+        height: 750px;
     }
     main img{
         display: block;
         width: 800px;
         position: absolute;
-        top: 42%;
+        top: 37%;
         left: 50%;
         transform: translate(-50%, -50%);       
     }
     .main-text{
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: start;
 
+    }
+    .main-texts{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
     .main-text p{
         max-width: 443px;
@@ -272,11 +277,17 @@ function submit() {
         gap: 50px;
     }
     section a{
-        text-decoration: underline;
-        font-size: 48px;
+        padding: 7px 20px;
+        font-size: 28px;
+        border-radius: 16px;
+        color: white;
+        background-color: #1E1E5A;
+        border: 1px solid #1E1E5A;
+        transition: 0.2s;
     }
     section a:hover{
-        color: #1e1e5a9a;
+        color: #1E1E5A;
+        background-color: white ;
     }
     .text{
         position: relative;
@@ -299,7 +310,7 @@ function submit() {
         padding: 0
     }
     .section-name span{
-        font-size: 20px;
+        font-size: 14px;
         color: #1e1e5a9a;
     }
     .box{
@@ -377,7 +388,7 @@ function submit() {
     }
     .work-section-text{
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
         gap: 246px;
     }
@@ -387,6 +398,9 @@ function submit() {
         width: 902px;
         gap: 20px;
 
+    }
+    .work-section-texts p{
+        line-height: 1.2;
     }
     .work-section-texts-2{
         display: flex;
@@ -398,6 +412,9 @@ function submit() {
         font-family: 'regular';
     }
     /* сотрудники */
+    .nav{
+        border: none;
+    }
     .workers-section{
         position: relative;
     }

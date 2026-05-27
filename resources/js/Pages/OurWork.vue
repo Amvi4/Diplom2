@@ -85,7 +85,7 @@ section a:hover {
 }
 
 .section-name span {
-  font-size: 20px;
+  font-size: 14px;
   color: #1e1e5a9a;
 }
 

@@ -17,9 +17,11 @@ body{
     background-color: white;
 }
 h1{
-    font-family: 'light';
+    font-family: 'regular';
     font-size: 96px;
     color: #1E1E5A;
+    line-height: 1.1;
+    font-weight: 500;
 }
 p{
     font-family: 'light';
@@ -28,6 +30,7 @@ p{
 }
 h2{
     font-size: 48px;
+    line-height: 1.2;
 }
 h3{
     font-family: 'light';

@@ -10,6 +10,7 @@
     <Header />
   <main>
     <h1>Услуги, которые мы предоставляем</h1>
+    <img src="../../src/images/maska.png" alt="маска" class="maska">
   </main>
 
   <!-- УСЛУГИ -->
@@ -84,8 +85,14 @@ function go(url) {
 <style scoped>
 /* главная */
 main {
+  position: relative;
   margin: 100px 50px;
   width: 976px;
+}
+.maska{
+  position: absolute;
+  top: -20%;
+  right: -50%;
 }
 
 /* секции */
@@ -125,7 +132,7 @@ section a:hover {
 }
 
 .section-name span {
-  font-size: 20px;
+  font-size: 14px;
   color: #1e1e5a9a;
 }
 
@@ -159,10 +166,7 @@ section a:hover {
   width: 412px;
   transition: 0.2s;
 }
-.service:hover{
-  background-color: #1c1c80c9;
-}
-.service h3, .service p, .service a {
+.service h3, .service p {
   color: #D1D1E2;
 }
 
@@ -173,16 +177,23 @@ section a:hover {
   right: 20px;
   font-size: 15px;
 }
-
 .service a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  color: #1E1E5A;
   position: absolute;
   bottom: 20px;
   right: 20px;
   font-size: 15px;
+  border: 1px solid white;
+  transition: 0.2s;
 }
 
 .service a:hover {
-  color: #d1d1e256;
+  color: white;
+  background-color: #1E1E5A;
 }
 
 /* факторы */
@@ -215,6 +226,9 @@ section a:hover {
   section {
     margin: 60px 20px;
     gap: 30px;
+  }
+  .maska{
+    display: none;
   }
 
   main {

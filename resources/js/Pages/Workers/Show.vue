@@ -131,7 +131,7 @@ function remove(id) {
         padding: 0
     }
     .section-name span{
-        font-size: 20px;
+        font-size: 14px;
         color: #1e1e5a9a;
     }
     .box{
