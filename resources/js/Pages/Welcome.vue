@@ -239,14 +239,28 @@ function submit() {
         flex-direction: column;
         height: 750px;
     }
-    main img{
-        display: block;
-        width: 800px;
-        position: absolute;
-        top: 37%;
-        left: 50%;
-        transform: translate(-50%, -50%);       
-    }
+    main img {
+  display: block;
+  width: 700px;
+  position: absolute;
+  top: 37%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: slowFloat 10s ease-in-out infinite;
+}
+
+@keyframes slowFloat {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -53%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
     .main-text{
         display: flex;
         justify-content: space-between;

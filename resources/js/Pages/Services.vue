@@ -90,9 +90,11 @@ main {
   width: 976px;
 }
 .maska{
+  width: 600px;
   position: absolute;
-  top: -20%;
-  right: -50%;
+  top: -10%;
+  right: -65%;
+  z-index: -1;
 }
 
 /* секции */
