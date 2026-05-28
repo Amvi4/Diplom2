@@ -90,9 +90,9 @@ main {
   width: 976px;
 }
 .maska{
-  width: 600px;
+  width: 550px;
   position: absolute;
-  top: -10%;
+  top: -19%;
   right: -65%;
   z-index: -1;
 }

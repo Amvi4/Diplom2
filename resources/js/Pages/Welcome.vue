@@ -244,7 +244,7 @@ function submit() {
   width: 700px;
   position: absolute;
   top: 37%;
-  left: 65%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
   animation: slowFloat 10s ease-in-out infinite;
