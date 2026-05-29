@@ -1,7 +1,7 @@
 <script setup>
 import Footer from '@/Components/Footer.vue';
 import Header from '@/Components/Header.vue';
-import { useForm } from '@inertiajs/vue3';
+import { useForm, Head } from '@inertiajs/vue3';
 const form = useForm({
   name: '',
   phone: '',
@@ -53,6 +53,7 @@ function submit() {
   align-items: center;
   justify-content: center;
   padding: 100px;
+  margin: 10vh 0 60vh ;
 }
 
 .feedback {
