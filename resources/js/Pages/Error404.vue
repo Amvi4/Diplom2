@@ -10,7 +10,7 @@ function goHome() {
 
 <template>
     <Head>
-        <title>404</title>
+        <title>Ошибка - 404</title>
 
         <meta
             name="description"
@@ -64,6 +64,7 @@ button {
   border-radius: 12px;
   cursor: pointer;
   font-size: 18px;
+  border: 1px solid #1E1E5A ;
 }
 
 /* АДАПТИВ */

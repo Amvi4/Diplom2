@@ -79,9 +79,6 @@ function submit() {
   width: 33px;
   height: 33px;
 }
-button{
-  border: 1px solid #1E1E5A ;
-}
 #input {
   color: #1E1E5A;
 }
