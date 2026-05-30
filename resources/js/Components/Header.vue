@@ -253,13 +253,18 @@ a{
   background-color: transparent;
   color: red;
   font-size: 20px;
+  text-align: left;
 }
 .win-btn-logout:hover{
   color: rgba(255, 0, 0, 0.521);
+  padding: 10px 0px;
 }
 
 /* адаптив */
 @media (max-width: 768px) {
+  hr{
+    min-width: 100%;
+  }
   .section-header {
     display: none;
   }
@@ -309,9 +314,9 @@ a{
     width: 280px;
     max-width: 90%;
     margin-bottom: 0;
-    text-align: center;
+    text-align: end;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 22px;
     cursor: pointer;
   }
 
@@ -319,8 +324,8 @@ a{
     position: absolute;
     top: 15px;
     right: 20px;
-    width: 40px !important;
-    height: 40px;
+    width: 45px !important;
+    height: 45px;
     font-size: 24px;
     background: transparent;
     color: #1E1E5A;
@@ -340,6 +345,7 @@ a{
   .win-btn {
     padding: 0;
     align-items: center;
+    text-align: start;
     font-size: 16px;
     width: 280px;
     max-width: 90%;
@@ -358,7 +364,6 @@ a{
     color: #ff4444;
     border: 1px solid #ff4444;
     border: 0px;
-    margin-top: 10px;
   }
 
   /* Разделитель для групп кнопок */

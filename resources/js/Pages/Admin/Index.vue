@@ -82,7 +82,7 @@ function deleteFeedback(id) {
   flex-direction: column;
   padding: 100px 50px;
   align-items: center;
-  margin: 0 0 200px;
+  margin: 0 0 250px;
 }
 
 table {
