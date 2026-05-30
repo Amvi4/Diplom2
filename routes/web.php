@@ -65,6 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // заявки
     Route::get('/admin/orders', [AdminOrderController::class, 'index']);
     Route::post('/admin/orders/{order}/status', [AdminOrderController::class, 'updateStatus']);
+    Route::delete('/admin/orders/{order}', [AdminOrderController::class, 'destroy']);
 
     // сотрудники
     Route::get('/admin/workers', [AdminWorkerController::class, 'index']);
@@ -77,6 +78,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     // обратная связь
     Route::get('/admin/feedback', [AdminFeedbackController::class, 'index']);
+    Route::delete('/admin/feedback/{feedback}', [AdminFeedbackController::class, 'destroy']);
 
     // отзывы
     Route::get('/admin/reviews', [AdminReviewController::class, 'index']);

@@ -39,15 +39,21 @@ class OrderController extends Controller
         ]);
     }
     public function updateStatus(Request $request, Order $order)
-{
-    $request->validate([
-        'status' => 'required|in:new,in_progress,done'
-    ]);
+    {
+        $request->validate([
+            'status' => 'required|in:new,in_progress,done'
+        ]);
 
-    $order->update([
-        'status' => $request->status
-    ]);
+        $order->update([
+            'status' => $request->status
+        ]);
 
-    return back();
-}
+        return back();
+    }
+    public function destroy(Order $order)
+    {
+        $order->delete();
+
+        return back();
+    }
 }

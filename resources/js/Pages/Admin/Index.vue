@@ -70,7 +70,7 @@ function deleteFeedback(id) {
         return
     }
 
-    router.delete(`/admin/orders/${id}`, {
+    router.delete(`/admin/feedback/${id}`, {
         preserveScroll: true
     })
 }

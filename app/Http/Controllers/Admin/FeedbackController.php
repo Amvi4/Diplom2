@@ -17,4 +17,10 @@ class FeedbackController extends Controller
             'feedbacks' => Feedback::latest()->get()
         ]);
     }
+    public function destroy(Feedback $feedback)
+    {
+        $feedback->delete();
+
+        return back();
+    }
 }
