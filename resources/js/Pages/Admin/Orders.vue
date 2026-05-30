@@ -124,6 +124,15 @@ const filters = reactive({
   status: props.filters?.status || '',
   date: props.filters?.date || ''
 })
+function deleteOrder(id) {
+    if (!confirm('Удалить заявку?')) {
+        return
+    }
+
+    router.delete(`/admin/orders/${id}`, {
+        preserveScroll: true
+    })
+}
 
 function applyFilters() {
   router.get('/admin/orders', filters)

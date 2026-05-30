@@ -59,11 +59,21 @@
 <script setup>
 import Footer from '@/Components/Footer.vue';
 import Header from '@/Components/Header.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, router } from '@inertiajs/vue3';
 
 defineProps({
   feedbacks: Array
 })
+
+function deleteFeedback(id) {
+    if (!confirm('Удалить комментарий?')) {
+        return
+    }
+
+    router.delete(`/admin/orders/${id}`, {
+        preserveScroll: true
+    })
+}
 </script>
 
 <style scoped>
