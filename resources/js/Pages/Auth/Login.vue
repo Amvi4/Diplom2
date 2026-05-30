@@ -182,6 +182,7 @@ const submit = () => {
   border-radius: 8px;
   width: 598px;
   margin: 0;
+  border: 1px solid #D1D1E2;
 }
 
 .flex button:hover {

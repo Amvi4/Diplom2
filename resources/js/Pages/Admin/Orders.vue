@@ -38,6 +38,7 @@
             <th class="head">Цена</th>
             <th class="head">Статус</th>
             <th class="head">Дата</th>
+            <th class="head">Удалить</th>
           </tr>
         </thead>
 
@@ -77,6 +78,11 @@
 
             <td>
               {{ formatDate(order.created_at) }}
+            </td>
+            <td>
+              <button class="delete-btn" @click="deleteOrder(order.id)">
+                Удалить
+              </button>
             </td>
           </tr>
         </tbody>
@@ -267,6 +273,9 @@ td {
 
 th {
   background: #1E1E5A;
+}
+.delete-btn{
+  padding: 0 10px;
 }
 
 /* статусы */

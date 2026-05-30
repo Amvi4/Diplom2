@@ -19,6 +19,7 @@
           <th>Телефон</th>
           <th>Комментарий</th>
           <th>Дата</th>
+          <th>Удалить</th>
         </tr>
       </thead>
 
@@ -39,6 +40,11 @@
               new Date(item.created_at)
                 .toLocaleString()
             }}
+          </td>
+          <td>
+            <button class="delete-btn" @click="deleteFeedback(item.id)">
+              Удалить
+            </button>
           </td>
         </tr>
 
@@ -66,6 +72,7 @@ defineProps({
   flex-direction: column;
   padding: 100px 50px;
   align-items: center;
+  margin: 0 0 100px;
 }
 
 table {
@@ -82,7 +89,7 @@ td {
 }
 
 th {
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'light';
 }
 
@@ -92,12 +99,15 @@ td {
 .comment{
   overflow: hidden;
 }
+.delete-btn{
+  padding: 0 10px;
+}
 
 /* АДАПТИВ */
 @media (max-width: 1024px) {
   .page {
     width: 100%;
-    margin: 0 0 400px 0;
+    margin: 0 0 600px 0;
     padding: 80px 30px;
   }
 
