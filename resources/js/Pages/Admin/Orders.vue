@@ -130,7 +130,8 @@ function deleteOrder(id) {
     }
 
     router.delete(`/admin/orders/${id}`, {
-        preserveScroll: true
+        preserveScroll: true,
+        preserveState: false
     })
 }
 
