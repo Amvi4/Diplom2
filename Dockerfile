@@ -28,12 +28,10 @@ RUN php artisan package:discover || true
 RUN php artisan config:clear
 RUN php artisan cache:clear
 RUN php artisan storage:link || true
-RUN php artisan migrate --force
 
 RUN chmod -R 775 storage bootstrap/cache
-RUN psql --version || true
-RUN php -i | grep -i "PostgreSQL" || true
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
+# Миграции запускаются при старте контейнера
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000
