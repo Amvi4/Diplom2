@@ -9,7 +9,7 @@ php artisan migrate --force --no-interaction
 
 # Очищаем и кешируем конфиг (теперь переменные окружения ДОСТУПНЫ!)
 php artisan config:clear
-# php artisan config:cache
+php artisan config:cache
 
 # Миграции
 
