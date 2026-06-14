@@ -3,11 +3,16 @@ set -e
 
 cd /var/www/html
 
-echo "Waiting for database..."
+# Ждем PostgreSQL
+echo "Waiting for PostgreSQL..."
 sleep 5
 
-echo "Running migrations..."
+# Очищаем и кешируем конфиг (теперь переменные окружения ДОСТУПНЫ!)
+php artisan config:clear
+php artisan config:cache
+
+# Миграции
 php artisan migrate --force
 
-echo "Starting application on 0.0.0.0:${PORT:-10000}..."
-php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+# Запуск
+php artisan serve --host=0.0.0.0 --port=10000
