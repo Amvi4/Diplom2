@@ -1,11 +1,22 @@
 #!/bin/bash
-set -e  # Останавливает скрипт при любой ошибке
+set -e
+
+echo "Current directory: $(pwd)"
+echo "Listing files in current directory:"
+ls -la
+
+# ПЕРЕХОДИМ В РАБОЧУЮ ПАПКУ ПРОЕКТА
+cd /var/www/html || exit 1
+
+echo "Now in directory: $(pwd)"
+echo "Checking for artisan file:"
+ls -la artisan
 
 # Ждем, пока база данных будет готова принять соединения
 echo "Waiting for database to be ready..."
 sleep 5
 
-# Запускаем миграции. Флаг --force нужен для production окружения.
+# Запускаем миграции
 echo "Running migrations..."
 php artisan migrate --force
 
