@@ -26,6 +26,15 @@ use App\Models\Worker;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/db-ping', function () {
+    try {
+        DB::connection()->select('SELECT 1');
+        return 'DB OK';
+    } catch (\Exception $e) {
+        return $e->getMessage();
+    }
+});
+
 Route::get('/db-test', function () {
     return [
         'host' => config('database.connections.pgsql.host'),
