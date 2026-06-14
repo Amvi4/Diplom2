@@ -72,6 +72,7 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'require',
+            'url' => env('DATABASE_URL'),
         ],
 
         'sqlsrv' => [
