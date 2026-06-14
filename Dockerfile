@@ -36,7 +36,7 @@
 # # Миграции запускаются при старте контейнера
 # CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000
 
-FROM php:8.2-fpm
+FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
     git curl zip unzip \
