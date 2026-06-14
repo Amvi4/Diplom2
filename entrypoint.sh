@@ -6,6 +6,7 @@ cd /var/www/html
 # Ждем PostgreSQL
 
 php artisan migrate --force --no-interaction
+php artisan db:seed --force --no-interaction
 
 # Очищаем и кешируем конфиг (теперь переменные окружения ДОСТУПНЫ!)
 php artisan config:clear
