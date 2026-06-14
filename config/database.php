@@ -73,13 +73,6 @@ return [
             'search_path' => 'public',
             'sslmode' => 'require',
             'url' => env('DATABASE_URL'),
-            'options' => [
-        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-    ],
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-    ],
         ],
 
         'sqlsrv' => [
