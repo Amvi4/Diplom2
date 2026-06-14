@@ -9,5 +9,5 @@ sleep 5
 echo "Running migrations..."
 php artisan migrate --force
 
-echo "Starting application..."
-php artisan serve --host=0.0.0.0 --port=10000
+echo "Starting application on 0.0.0.0:${PORT:-10000}..."
+php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
