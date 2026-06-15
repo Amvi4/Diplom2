@@ -241,6 +241,7 @@ section a:hover {
   background-color: transparent;
   color: #1E1E5A;
   font-size: 24px;
+  border: none;
 }
 
 .nav:hover {
