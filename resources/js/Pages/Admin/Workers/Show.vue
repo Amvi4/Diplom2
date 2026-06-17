@@ -228,8 +228,8 @@ section a:hover {
 
 .top {
   display: flex;
-  align-items: end;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
 }
 
 /* работы сотрудника */
