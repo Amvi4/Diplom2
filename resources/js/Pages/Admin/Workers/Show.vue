@@ -180,13 +180,19 @@ section a:hover {
 }
 .edit-form{
   width: 908px;
+  align-items: center;
 }
 .edit-form button{
-  padding: 20px;
+  width: 200px;
+  margin: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 /* главная */
 .worker_section_main {
   padding: 50px 50px 0;
+  width: 908px;
 }
 
 .worker_section_main h1 {
