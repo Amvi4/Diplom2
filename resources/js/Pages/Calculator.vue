@@ -9,15 +9,20 @@
     <Header />
   <div class="wrapper">
     <div class="calc">
-      <h1>Калькулятор</h1>
+      <div class="text">
+        <h1>Рассчитайте стоимость и оставьте заявку</h1>
+        <p>Расчет является предварительным.
+            После рассчета стоимости сайт перенаправит вас на страницу для подробного уточнения ваших потребностей. после вы оставляете заявку, чтобы потом с вами связались для повторного уточнения
+            вида работ, выбора технологии сварки, сотрудника и окончательной стоимости.</p>
+      </div>
       <div class="calcChoose">
       <!-- Тип сварки -->
       <div class="labelInput">
-          <label>Тип сварки</label>
+          <label>Услуга (Тип сварки)</label>
           <select v-model="type">
-            <option value="mig">MIG</option>
-            <option value="tig">TIG</option>
-            <option value="mma">MMA</option>
+            <option value="mig">MIG (Дуговая сварка)</option>
+            <option value="tig">TIG (Вольфрамовая дуговая сварка)</option>
+            <option value="mma">MMA (Плавящаяся дуговая сварка)</option>
           </select>
       </div>
 
@@ -45,7 +50,7 @@
 
       <!-- Результат -->
       <span class="result">
-        Итого: {{ total }} ₽
+        Предварительная стоимость: {{ total }} ₽
       </span>
 
       <!-- Кнопка -->
@@ -123,8 +128,20 @@ function goOrder() {
   flex-direction: column;
   align-items: center;
   margin: 76px 0;
-  max-width: 908px;
+  max-width: 1200px;
   width: 100%;
+  gap: 50px;
+}
+.calc h1{
+  text-align: center;
+}
+.text p{
+  text-align: center;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .calcChoose {

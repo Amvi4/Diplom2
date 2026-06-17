@@ -82,6 +82,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/orders', [AdminOrderController::class, 'index']);
     Route::post('/admin/orders/{order}/status', [AdminOrderController::class, 'updateStatus']);
     Route::delete('/admin/orders/{order}', [AdminOrderController::class, 'destroy']);
+    Route::put('/admin/workers/{worker}', [WorkerController::class, 'update']);
 
     // сотрудники
     Route::get('/admin/workers', [AdminWorkerController::class, 'index']);

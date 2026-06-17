@@ -143,6 +143,12 @@ main h1 {
   justify-content: space-between;
   background-color: #D1D1E2;
 }
+.contact h3{
+  font-size: 18px;
+}
+.contact span{
+  font-size: 22px;
+}
 
 .contact span, .contact h3 {
   color: #1E1E5A;

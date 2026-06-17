@@ -31,7 +31,7 @@ class WorkerController extends Controller
             'name' => 'required',
             'position' => 'required',
             'experience' => 'required|integer',
-            'description' => 'nullable',
+            'description' => 'nullable|string',
             'photo' => 'nullable|image|max:2048'
         ]);
         $cloudinary = new Cloudinary([
@@ -121,6 +121,17 @@ class WorkerController extends Controller
         'title' => $request->title,
         'description' => $request->description,
         'work_image' => $image
+    ]);
+
+    return back();
+}
+public function update(Request $request, Worker $worker)
+{
+    $worker->update([
+        'name' => $request->name,
+        'position' => $request->position,
+        'experience' => $request->experience,
+        'description' => $request->description,
     ]);
 
     return back();

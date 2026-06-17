@@ -9,7 +9,7 @@
     <Header />
   <div class="page">
 
-    <h1>Комментарий</h1>
+    <h1>Добавьте комментарий</h1>
 
     <div class="form">
       <textarea v-model="form.comment" placeholder="Введите комментарий"/>

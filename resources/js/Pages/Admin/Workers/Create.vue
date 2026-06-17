@@ -18,8 +18,13 @@
       <input v-model="form.position" type="text" placeholder="Должность">
 
       <input v-model="form.experience" type="number" placeholder="Опыт">
+      <textarea
+            v-model="form.description"
+            placeholder="Описание сотрудника"
+        ></textarea>
 
       <input type="file" @change="handleFile" id="file"> 
+      
       
       <button @click="submit">Сохранить</button>
     </div>
@@ -37,6 +42,7 @@ const form = useForm({
   name: '',
   position: '',
   experience: '',
+  description: '',
   photo: null
 })
 

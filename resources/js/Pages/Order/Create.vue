@@ -10,8 +10,8 @@
   <section class="order-section">
     <div class="order">
       <div class="text">
-        <h1>Заявка</h1>
-        <span>Осталось совсем немного!</span>
+        <h1>Создание заявки</h1>
+        <span>Добавьте недостающей информации</span>
       </div>
 
       <div class="order-parametres">
@@ -23,7 +23,7 @@
       </div>
       
       <div class="comment">
-        <textarea v-model="comment" placeholder="Добавьте недостающей информации"></textarea>
+        <textarea v-model="comment" placeholder="Напишите здесь что-нибудь"></textarea>
 
         <button @click="send">Отправить</button>
       </div>

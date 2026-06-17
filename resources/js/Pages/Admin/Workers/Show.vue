@@ -19,6 +19,26 @@
             <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
+
+    <div class="edit-form">
+    <input v-model="workerForm.name">
+
+    <input v-model="workerForm.position">
+
+    <input
+        v-model="workerForm.experience"
+        type="number"
+    >
+
+    <textarea
+        v-model="workerForm.description"
+    ></textarea>
+
+    <button @click="updateWorker">
+        Сохранить
+    </button>
+</div>
+    
     <!-- РАБОТЫ СОТРУДНИКА -->
     <section class="jobs-section">
       <div class="text" id="text-work">
@@ -60,6 +80,16 @@
 import Footer from '@/Components/Footer.vue'
 import Header from '@/Components/Header.vue'
 import { useForm, router, Head } from '@inertiajs/vue3'
+
+const workerForm = useForm({
+    name: props.worker.name,
+    position: props.worker.position,
+    experience: props.worker.experience,
+    description: props.worker.description,
+})
+function updateWorker() {
+    workerForm.put(`/admin/workers/${props.worker.id}`)
+}
 
 const props = defineProps({
     worker: Object
