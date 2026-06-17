@@ -8,12 +8,13 @@
         />
     </Head>
   <Header />
-    <main class="worker_section_main">
+  <main>
+    <div class="worker_section_main">
       <h1>{{ worker.name }}</h1>
       <p>{{ worker.position }}</p>
       <p>Опыт: {{ worker.experience }} лет</p>
       <p>{{ worker.description }}</p>
-    </main>
+    </div>
     <!-- СОТРУДНИК -->
     <section class="page">
 
@@ -21,6 +22,7 @@
             <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
+    </main>
     <!-- РАБОТЫ СОТРУДНИКА -->
     <section class="jobs-section">
       <div class="text" id="text-work">
@@ -84,6 +86,10 @@ function remove(id) {
 </script>
 
 <style scoped>
+main{
+    display: flex;
+    flex-direction: row;
+}
  /* секции */
     section{
         display: flex;
@@ -134,6 +140,10 @@ function remove(id) {
 /* главная */
 .worker_section_main{
   padding: 50px 50px 0;
+  width: 908px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 /* работник */
 .page{
@@ -227,6 +237,9 @@ button {
     main{
         width: 90%;
     }
+    .top{
+        display: none;
+    }
 
     /* ОБЩИЕ СЕКЦИИ */
     section {
@@ -260,6 +273,7 @@ button {
     /* ГЛАВНЫЙ БЛОК СОТРУДНИКА */
     .worker_section_main {
         padding: 30px 20px 0;
+        width: 90%;
     }
 
     .worker_section_main h1 {
@@ -273,6 +287,7 @@ button {
     /* БЛОК О СОТРУДНИКЕ */
     .page {
         margin: 20px;
+        display: none;
     }
 
     .top {
