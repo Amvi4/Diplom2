@@ -78,7 +78,7 @@ Route::get('/service/{id}', [ServiceController::class, 'select']);
 
 // Админка
 // 'auth',
-Route::middleware([ 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     // заявки
     Route::get('/admin/orders', [AdminOrderController::class, 'index']);
     Route::post('/admin/orders/{order}/status', [AdminOrderController::class, 'updateStatus']);
