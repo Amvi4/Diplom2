@@ -127,6 +127,13 @@ class WorkerController extends Controller
 }
 public function update(Request $request, Worker $worker)
 {
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'position' => 'required|string|max:255',
+        'experience' => 'required|integer',
+        'description' => 'nullable|string',
+    ]);
+
     $worker->update([
         'name' => $request->name,
         'position' => $request->position,
