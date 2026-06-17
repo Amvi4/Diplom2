@@ -130,10 +130,11 @@ function submit() {
   .contacts-section {
     margin: 50px 20px;
     padding: 0;
+    width: 70%;
   }
 
   .contacts {
-    width: 100%;
+    width: 90%;
     gap: 30px;
   }
 
@@ -178,6 +179,7 @@ function submit() {
   .feedback-section {
     padding: 50px 20px;
     margin: 0;
+    width: 90%;
   }
 
   .feedback {

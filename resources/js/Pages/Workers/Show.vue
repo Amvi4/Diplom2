@@ -12,12 +12,12 @@
       <h1>{{ worker.name }}</h1>
       <p>{{ worker.position }}</p>
       <p>Опыт: {{ worker.experience }} лет</p>
+      <p>{{ worker.description }}</p>
     </main>
     <!-- СОТРУДНИК -->
     <section class="page">
 
         <div class="top">
-            <p>{{ worker.description }}</p>
             <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
@@ -222,5 +222,123 @@ button {
 #file::file-selector-button:hover{
   background-color: #1E1E5A;
   color: #D1D1E2;
+}
+@media (max-width: 768px) {
+    main{
+        width: 90%;
+    }
+
+    /* ОБЩИЕ СЕКЦИИ */
+    section {
+        margin: 80px 20px;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    section p{
+        width: 90%;
+    }
+
+    /* ЗАГОЛОВКИ */
+    .text {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text h2 {
+        width: 100%;
+        font-size: 22px;
+    }
+
+    .section-name {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 10px;
+    }
+
+    /* ГЛАВНЫЙ БЛОК СОТРУДНИКА */
+    .worker_section_main {
+        padding: 30px 20px 0;
+    }
+
+    .worker_section_main h1 {
+        font-size: 26px;
+    }
+
+    .worker_section_main p {
+        font-size: 16px;
+    }
+
+    /* БЛОК О СОТРУДНИКЕ */
+    .page {
+        margin: 20px;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .top p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .top img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* РАБОТЫ */
+    .works {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work {
+        height: auto;
+    }
+
+    .work-image {
+        height: 220px;
+    }
+
+    .works h3 {
+        font-size: 18px;
+    }
+
+    .works p {
+        font-size: 14px;
+    }
+
+    /* КНОПКИ / ФОРМА */
+    button {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+    .jobs-section{
+        width: 80%;
+    }
+    .contact{
+        width: 70%;
+    }
+    .contacts{
+        max-width: 90%;
+    }
+    .calc-section{
+        width: 90%;
+    }
+    .feedback-section{
+        width: 80%;
+    }
 }
 </style>

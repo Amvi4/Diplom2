@@ -134,6 +134,7 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 600px;
 }
  section {
   display: flex;
@@ -188,6 +189,7 @@ section a:hover {
   border-radius: 2px;
 }
 .edit-form{
+  margin: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,6 +198,9 @@ section a:hover {
 }
 .edit-form-form{
   width: 908px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .edit-form button{
   width: 200px;
@@ -210,6 +215,7 @@ section a:hover {
   width: 908px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .worker_section_main h1 {
@@ -222,14 +228,11 @@ section a:hover {
 
 /* работник */
 .page {
-  margin: 0 0 50px 500px;
-  padding: 0;
+  height: 400px;
 }
 
 .top {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* работы сотрудника */
@@ -426,14 +429,20 @@ button {
     gap: 25px;
   }
   .edit-form{
-    width: 100%;
-    margin: 30px;
+    width: 400px;
+  }
+  .edit-form-form{
+    max-width: 80%;
+    gap: 5px;
+  }
+  .edit-form-form input, .edit-form-form textarea{
+    margin: 0;
   }
   .worker_section_main {
     padding: 20px 20px 0;
   }
   .edit-form-form input, .edit-form-form textarea{
-    width: 200px;
+    width: 300px;
     margin: 30px;
   }
   .worker_section_main h1 {
@@ -448,6 +457,7 @@ button {
     margin: 0 0 20px 0;
     display: flex;
     justify-content: center;
+    display: none;
   }
 
   .top {
@@ -459,6 +469,7 @@ button {
     max-width: 350px;
     height: auto;
     aspect-ratio: 1 / 1;
+    
   }
 
   .text {
@@ -483,7 +494,7 @@ button {
 
   .works {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 190px;
     width: 100%;
   }
 
@@ -542,6 +553,9 @@ button {
 
   #file::file-selector-button {
     padding: 6px 12px;
+  }
+  .jobs-section{
+    margin: 0 0 200px 30px;
   }
 }
 

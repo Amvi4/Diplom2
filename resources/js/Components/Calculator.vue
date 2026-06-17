@@ -53,6 +53,7 @@ function go(url) {
     margin: 0;
     align-items: start;
     justify-content: start;
+    width: 90%;
   }
 
   .calc {
