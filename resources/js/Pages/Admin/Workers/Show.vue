@@ -81,6 +81,11 @@ import Footer from '@/Components/Footer.vue'
 import Header from '@/Components/Header.vue'
 import { useForm, router, Head } from '@inertiajs/vue3'
 
+const props = defineProps({
+    worker: Object
+})
+
+
 const workerForm = useForm({
     name: props.worker.name,
     position: props.worker.position,
@@ -90,10 +95,6 @@ const workerForm = useForm({
 function updateWorker() {
     workerForm.put(`/admin/workers/${props.worker.id}`)
 }
-
-const props = defineProps({
-    worker: Object
-})
 
 const form = useForm({
 
