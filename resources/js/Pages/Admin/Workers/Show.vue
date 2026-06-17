@@ -188,7 +188,11 @@ section a:hover {
   border-radius: 2px;
 }
 .edit-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-width: 100%;
 }
 .edit-form-form{
   width: 908px;
@@ -204,6 +208,8 @@ section a:hover {
 .worker_section_main {
   padding: 50px 50px 0;
   width: 908px;
+  display: flex;
+  flex-direction: column;
 }
 
 .worker_section_main h1 {
@@ -420,14 +426,14 @@ button {
     gap: 25px;
   }
   .edit-form{
-    max-width: 100%;
+    width: 100%;
     margin: 30px;
   }
   .worker_section_main {
     padding: 20px 20px 0;
   }
-  input{
-    max-width: 100%;
+  .edit-form-form input, .edit-form-form textarea{
+    width: 200px;
     margin: 30px;
   }
   .worker_section_main h1 {
