@@ -7,6 +7,7 @@
         />
     </Head>
   <Header />
+  <main>
     <main class="worker_section_main">
       <h1>{{ worker.name }}</h1>
       <p>{{ worker.position }}</p>
@@ -20,8 +21,10 @@
             <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
+    </main>
 <!-- ИЗМЕНИТЬ -->
     <div class="edit-form">
+      <div class="edit-form-form">
       <h2>
         Изменить данные сотрудника
       </h2>
@@ -41,6 +44,7 @@
     <button @click="updateWorker">
         Сохранить
     </button>
+    </div>
 </div>
     
     <!-- РАБОТЫ СОТРУДНИКА -->
@@ -126,6 +130,11 @@ function remove(id) {
 </script>
 
 <style scoped>
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
  section {
   display: flex;
   flex-direction: column;
@@ -179,8 +188,10 @@ section a:hover {
   border-radius: 2px;
 }
 .edit-form{
-  width: 908px;
   align-items: center;
+}
+.edit-form-form{
+  width: 908px;
 }
 .edit-form button{
   width: 200px;
@@ -415,7 +426,10 @@ button {
   .worker_section_main {
     padding: 20px 20px 0;
   }
-
+  input{
+    max-width: 100%;
+    margin: 30px;
+  }
   .worker_section_main h1 {
     font-size: 24px;
   }
