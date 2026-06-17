@@ -82,7 +82,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/orders', [AdminOrderController::class, 'index']);
     Route::post('/admin/orders/{order}/status', [AdminOrderController::class, 'updateStatus']);
     Route::delete('/admin/orders/{order}', [AdminOrderController::class, 'destroy']);
-    Route::put('/admin/workers/{worker}', [WorkerController::class, 'update']);
 
     // сотрудники
     Route::get('/admin/workers', [AdminWorkerController::class, 'index']);
@@ -92,6 +91,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/workers/{worker}', [AdminWorkerController::class, 'show']);
     Route::post('/admin/workers/{worker}/works', [AdminWorkerController::class, 'storeWork']);
     Route::delete('/admin/works/{work}',[AdminWorkerController::class, 'destroyWork']);
+    Route::put('/admin/workers/{worker}', [AdminWorkerController::class, 'update']);
 
     // обратная связь
     Route::get('/admin/feedback', [AdminFeedbackController::class, 'index']);
