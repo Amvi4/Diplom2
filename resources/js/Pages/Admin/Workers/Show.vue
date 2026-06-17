@@ -11,6 +11,7 @@
       <h1>{{ worker.name }}</h1>
       <p>{{ worker.position }}</p>
       <p>Опыт: {{ worker.experience }} лет</p>
+      <p>{{ worker.description }}</p>
     </main>
     <!-- СОТРУДНИК -->
     <section class="page">
@@ -19,8 +20,11 @@
             <img :src="worker.photo || '/images/default-worker.jpg'" alt="сотрудник" loading="lazy" />
         </div>
     </section>
-
+<!-- ИЗМЕНИТЬ -->
     <div class="edit-form">
+      <h2>
+        Изменить данные сотрудника
+      </h2>
     <input v-model="workerForm.name">
 
     <input v-model="workerForm.position">
@@ -174,7 +178,12 @@ section a:hover {
   height: 9px;
   border-radius: 2px;
 }
-
+.edit-form{
+  width: 908px;
+}
+.edit-form button{
+  padding: 20px;
+}
 /* главная */
 .worker_section_main {
   padding: 50px 50px 0;
@@ -393,7 +402,10 @@ button {
     margin: 60px 20px;
     gap: 25px;
   }
-
+  .edit-form{
+    max-width: 100%;
+    margin: 30px;
+  }
   .worker_section_main {
     padding: 20px 20px 0;
   }
