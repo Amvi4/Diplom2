@@ -49,6 +49,7 @@ class OrderController extends Controller
             'length' => $request->length,
             'thickness' => $request->thickness,
             'size' => $request->size,
+            'price' => $price,
         ]
     ]);
 
