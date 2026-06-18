@@ -53,10 +53,10 @@
           Сотрудники (А)
         </button>
         <button v-if="user.is_admin" @click="go('/admin/feedback')" class="win-btn">
-          вопросы (А)
+          Вопросы (А)
         </button>
         <button v-if="user.is_admin" @click="go('/admin/reviews')" class="win-btn">
-          отзывы (А)
+          Отзывы (А)
         </button>
         <button @click="logout" class="win-btn-logout">Выйти</button>
       </div>
