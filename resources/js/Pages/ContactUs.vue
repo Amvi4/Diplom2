@@ -2,6 +2,9 @@
 import Footer from '@/Components/Footer.vue';
 import Header from '@/Components/Header.vue';
 import { useForm, Head } from '@inertiajs/vue3';
+import { ref, watch } from 'vue';
+
+const error = ref('');
 const form = useForm({
   name: '',
   phone: '',
@@ -9,8 +12,19 @@ const form = useForm({
 })
 
 function submit() {
-  form.post('/feedback/step')
+  if (!form.agree) {
+    error.value = 'Для продолжения необходимо согласиться на обработку персональных данных';
+    return;
+  }
+
+  error.value = '';
+  form.post('/feedback/step');
 }
+watch(() => form.agree, (value) => {
+  if (value) {
+    error.value = '';
+  }
+});
 
 </script>
 
@@ -37,6 +51,9 @@ function submit() {
                     <input v-model="form.agree" type="checkbox" id="checkbox">
                    <span>Я согласен на обработку персональных данных</span>
                 </label>
+                <p v-if="error" class="error">
+                  {{ error }}
+                </p>
 
                 <button @click="submit">Продолжить</button>
             </div>
@@ -82,6 +99,11 @@ function submit() {
 #input {
   color: #1E1E5A;
 }
+.error {
+      color: #e53935;
+      font-size: 14px;
+      margin-top: -10px;
+    } 
 
 #input::placeholder {
   color: #1E1E5A;
@@ -138,7 +160,6 @@ function submit() {
 
   .checkbox {
     gap: 12px;
-    align-items: flex-start;
   }
 
   .checkbox span {

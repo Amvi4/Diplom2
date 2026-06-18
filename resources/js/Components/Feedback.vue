@@ -1,7 +1,9 @@
 <script setup>
 import Map from './Map.vue';
 import { router, usePage, useForm } from '@inertiajs/vue3';
-import { ref, } from 'vue';
+import { ref, watch } from 'vue';
+
+const error = ref('');
 const form = useForm({
   name: '',
   phone: '',
@@ -9,8 +11,19 @@ const form = useForm({
 })
 
 function submit() {
-  form.post('/feedback/step')
+  if (!form.agree) {
+    error.value = 'Для продолжения необходимо согласиться на обработку персональных данных';
+    return;
+  }
+
+  error.value = '';
+  form.post('/feedback/step');
 }
+watch(() => form.agree, (value) => {
+  if (value) {
+    error.value = '';
+  }
+});
 </script>
 
 <template>
@@ -48,6 +61,10 @@ function submit() {
                     <input v-model="form.agree" type="checkbox" id="checkbox">
                    <span>Я согласен на обработку персональных данных</span>
                 </label>
+
+                <p v-if="error" class="error">
+                  {{ error }}
+                </p>
 
                 <button @click="submit">Продолжить</button>
             </div>
@@ -96,6 +113,11 @@ function submit() {
         align-items: center;
         justify-content: center;
         padding: 100px;
+    }
+    .error {
+      color: #e53935;
+      font-size: 14px;
+      margin-top: -10px;
     }
     .feedback{
         width: 1131px;
