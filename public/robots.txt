@@ -12,6 +12,6 @@ Disallow: /reset-password
 Disallow: /verify-email
 Disallow: /confirm-password
 
-Host: https://ti-weld.ru
+Host: https://ti-welder.ru
 
-Sitemap: https://ti-weld.ru/sitemap.xml
+Sitemap: https://ti-welder.ru/sitemap.xml

@@ -5,42 +5,42 @@
 >
 
     <url>
-        <loc>https://ti-weld.ru/</loc>
+        <loc>https://ti-welder.ru/</loc>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/services</loc>
+        <loc>https://ti-welder.ru/services</loc>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/calculator</loc>
+        <loc>https://ti-welder.ru/calculator</loc>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/works</loc>
+        <loc>https://ti-welder.ru/works</loc>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/reviews</loc>
+        <loc>https://ti-welder.ru/reviews</loc>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/contacts</loc>
+        <loc>https://ti-welder.ru/contacts</loc>
         <priority>0.9</priority>
     </url>
 
 
 
     <url>
-        <loc>https://ti-weld.ru/contact-us</loc>
+        <loc>https://ti-welder.ru/contact-us</loc>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/ourwork</loc>
+        <loc>https://ti-welder.ru/ourwork</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://ti-weld.ru/workers</loc>
+        <loc>https://ti-welder.ru/workers</loc>
         <priority>0.8</priority>
     </url>
 
