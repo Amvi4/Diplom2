@@ -49,6 +49,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        if (session()->has('order_data')) {
+            return redirect()->route('order.create');
+        }
+
         return redirect()->intended('/profile');
 
     }

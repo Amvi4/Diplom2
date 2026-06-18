@@ -38,9 +38,9 @@ class AuthenticatedSessionController extends Controller
             return redirect('/admin/orders');
         }
 
-        if (auth()->user()->is_admin) {
-        return redirect('/admin/orders');
-    }
+        if (session()->has('order_data')) {
+            return redirect('/order');
+        }
 
         return redirect('/profile');
     }

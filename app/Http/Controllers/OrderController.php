@@ -41,6 +41,19 @@ class OrderController extends Controller
     }
     public function fromCalculator(Request $request)
 {
+    if (!auth()->check()) {
+
+    session([
+        'order_data' => [
+            'type' => $request->type,
+            'length' => $request->length,
+            'thickness' => $request->thickness,
+            'size' => $request->size,
+        ]
+    ]);
+
+    return redirect('/login');
+}
     $type = $request->type;
     $length = $request->length;
     $thickness = $request->thickness;
